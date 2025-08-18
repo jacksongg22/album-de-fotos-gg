@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Galeria da Turma</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #83a4d4, #b6fbff);
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .aluno {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+            padding: 10px;
+            transition: transform 0.3s;
+        }
+
+        .aluno:hover {
+            transform: scale(1.03);
+        }
+
+        .aluno img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.4s ease-in-out;
+        }
+
+        .aluno p {
+            margin: 10px 0 0;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal img {
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .fechar {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .controles {
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1100;
+        }
+
+        .controles button {
+            padding: 10px 15px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background: white;
+            transition: background 0.3s;
+        }
+
+        .controles button:hover {
+            background: #ddd;
+        }
+    </style>
+</head>
+<body>
+
+<h1>📸 Galeria de Fotos - Turma</h1>
+
+<div class="galeria">
+    <!-- 25 alunos -->
+    <div class="aluno"><img src="foto1.jpg" alt="1 - ADRIEL VINICIUS DA LUZ TOMAZ"><p>1 - ADRIEL VINICIUS DA LUZ TOMAZ</p></div>
+    <div class="aluno"><img src="foto2.jpg" alt="2 - BRENO FERREIRA DE BRITO"><p>2 - BRENO FERREIRA DE BRITO</p></div>
+    <div class="aluno"><img src="foto3.jpg" alt="3 - CARLOS EMANUEL DA SILVA"><p>3 - CARLOS EMANUEL DA SILVA</p></div>
+    <div class="aluno"><img src="foto4.jpg" alt="4 - CLEITON DOUGLAS ARAUJO DE SOUZA"><p>4 - CLEITON DOUGLAS ARAUJO DE SOUZA</p></div>
+    <div class="aluno"><img src="foto5.jpg" alt="5 - DEREK EDUARDO DELGADO DE SOUZA"><p>5 - DEREK EDUARDO DELGADO DE SOUZA</p></div>
+    <div class="aluno"><img src="foto6.jpg" alt="6 - FELIPE NADER DE MACEDO NEVES"><p>6 - FELIPE NADER DE MACEDO NEVES</p></div>
+    <div class="aluno"><img src="foto7.jpg" alt="7 - GABRIEL MERICO HORT"><p>7 - GABRIEL MERICO HORT</p></div>
+    <div class="aluno"><img src="foto8.jpg" alt="8 - GUILHERME DOS REIS SOARES DOS SANTOS"><p>8 - GUILHERME DOS REIS SOARES DOS SANTOS</p></div>
+    <div class="aluno"><img src="foto9.jpg" alt="9 - GUSTAVO MARTINS LYRA"><p>9 - GUSTAVO MARTINS LYRA</p></div>
+    <div class="aluno"><img src="foto10.jpg" alt="10 - JACKSON JOSÉ ADÃO FELIX"><p>10 - JACKSON JOSÉ ADÃO FELIX</p></div>
+    <div class="aluno"><img src="foto11.jpg" alt="11 - JANAINE NUNES DA SILVA"><p>11 - JANAINE NUNES DA SILVA</p></div>
+    <div class="aluno"><img src="foto12.jpg" alt="12 - JOÃO GABRIEL CARMO DE BONFIM"><p>12 - JOÃO GABRIEL CARMO DE BONFIM</p></div>
+    <div class="aluno"><img src="foto13.jpg" alt="13 - JOÃO GABRIEL JOSÉ MARTINS DE OLIVEIRA"><p>13 - JOÃO GABRIEL JOSÉ MARTINS DE OLIVEIRA</p></div>
+    <div class="aluno"><img src="foto14.jpg" alt="14 - LEONARDO ANTONIO PRADO TRINDADE"><p>14 - LEONARDO ANTONIO PRADO TRINDADE</p></div>
+    <div class="aluno"><img src="foto15.jpg" alt="15 - LUCAS CALCIOLARI CONSOLARO DOS SANTOS"><p>15 - LUCAS CALCIOLARI CONSOLARO DOS SANTOS</p></div>
+    <div class="aluno"><img src="foto16.jpg" alt="16 - MARIA EDUARDA BORZUK DA FONSECA URBANSKI"><p>16 - MARIA EDUARDA BORZUK DA FONSECA URBANSKI</p></div>
+    <div class="aluno"><img src="foto17.jpg" alt="17 - MARIA GABRIELA AQUINO PINHEIRO"><p>17 - MARIA GABRIELA AQUINO PINHEIRO</p></div>
+    <div class="aluno"><img src="foto18.jpg" alt="18 - MATEUS HENRIQUE DE CARVALHO"><p>18 - MATEUS HENRIQUE DE CARVALHO</p></div>
+    <div class="aluno"><img src="foto19.jpg" alt="19 - MATHEUS DOS SANTOS LOPES"><p>19 - MATHEUS DOS SANTOS LOPES</p></div>
+    <div class="aluno"><img src="foto20.jpg" alt="20 - PEDRO EDUARDO DOARTE"><p>20 - PEDRO EDUARDO DOARTE</p></div>
+    <div class="aluno"><img src="foto21.jpg" alt="21 - RENAN STEFANI LIRA"><p>21 - RENAN STEFANI LIRA</p></div>
+    <div class="aluno"><img src="foto22.jpg" alt="22 - SABRINA DE OLIVEIRA ALVES"><p>22 - SABRINA DE OLIVEIRA ALVES</p></div>
+    <div class="aluno"><img src="foto23.jpg" alt="23 - SAMANTHA CHRISTAKIS GARCIA COLUCCI"><p>23 - SAMANTHA CHRISTAKIS GARCIA COLUCCI</p></div>
+    <div class="aluno"><img src="foto24.jpg" alt="24 - VICTOR GABRIEL DE SOUSA"><p>24 - VICTOR GABRIEL DE SOUSA</p></div>
+    <div class="aluno"><img src="foto25.jpg" alt="25 - VITOR QUEIROZ DE BRITO NASCIMENTO"><p>25 - VITOR QUEIROZ DE BRITO NASCIMENTO</p></div>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+    <span class="fechar" id="fechar">&times;</span>
+    <img id="imagemModal" src="" alt="">
+</div>
+
+<!-- Botões de zoom fixos -->
+<div class="controles">
+    <button id="aumentar">+</button>
+    <button id="diminuir">-</button>
+</div>
+
+<script>
+const modal = document.getElementById("modal");
+const imagemModal = document.getElementById("imagemModal");
+const fechar = document.getElementById("fechar");
+const aumentar = document.getElementById("aumentar");
+const diminuir = document.getElementById("diminuir");
+let escala = 1;
+
+// Abrir modal ao clicar na imagem
+document.querySelectorAll(".galeria img").forEach(img => {
+    img.addEventListener("click", () => {
+        modal.style.display = "flex";
+        imagemModal.src = img.src;
+        imagemModal.alt = img.alt;
+        escala = 1;
+        imagemModal.style.transform = `scale(${escala})`;
+    });
+});
+
+// Fechar modal
+fechar.addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
+// Aumentar zoom
+aumentar.addEventListener("click", () => {
+    escala += 0.1;
+    imagemModal.style.transform = `scale(${escala})`;
+});
+
+// Diminuir zoom
+diminuir.addEventListener("click", () => {
+    if (escala > 0.2) {
+        escala -= 0.1;
+        imagemModal.style.transform = `scale(${escala})`;
+    }
+});
+
+// Fechar clicando fora da imagem
+modal.addEventListener("click", e => {
+    if (e.target === modal) {
+        modal.style.display = "none";
+    }
+});
+</script>
+
+</body>
+</html>
